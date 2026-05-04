@@ -20,9 +20,12 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top, rgba(255, 122, 0, 0.18), transparent 60%),
-    linear-gradient(135deg, #f6f7f9 0%, #edf0f4 50%, #e7ebf0 100%);
+  background: linear-gradient(
+    90deg,
+    #ff9838 0%,
+    #e5e7eb 50%,
+    #ffffff 100%
+  );
   color: var(--text);
   letter-spacing: 0.02em;
 }
@@ -42,8 +45,8 @@ body {
   margin-bottom: 32px;
   padding: 28px;
   border-radius: 0;
-  background: linear-gradient(135deg, rgba(255, 122, 0, 0.12), rgba(255, 255, 255, 0.9));
-  border: 1px solid rgba(255, 122, 0, 0.35);
+  background: #ffffff;
+  border: 1px solid var(--border);
 }
 
 .eyebrow {
@@ -67,13 +70,37 @@ h1 {
   max-width: 520px;
 }
 
+.feedback {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.log {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.log h2 {
+  margin-top: 0;
+}
+
+.log ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
 .quick-actions {
   display: flex;
   gap: 12px;
 }
 
 .btn {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: var(--accent);
   border: none;
   color: #1f1307;
   padding: 10px 16px;
@@ -184,11 +211,11 @@ select {
 }
 
 .tips {
-  background: rgba(255, 122, 0, 0.12);
-  border: 1px dashed rgba(255, 122, 0, 0.5);
+  background: #f0f2f5;
+  border: 1px dashed var(--border);
   padding: 8px 12px;
   border-radius: 0;
-  color: var(--accent);
+  color: var(--muted);
   font-size: 13px;
 }
 

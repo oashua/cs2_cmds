@@ -707,7 +707,7 @@ const renderCards = () => {
 
     const copyBtn = document.createElement("button");
     copyBtn.textContent = "复制";
-    copyBtn.addEventListener("click", () => copyText(item.command));
+  copyBtn.addEventListener("click", () => copyText(buildCommandText(item)));
 
     commandBox.append(code, copyBtn);
 
