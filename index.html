@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS2 控制台指令速查</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">CS2 · 个人练习 · 快速查找 · 一键复制</p>
+          <h1>CS2 控制台指令速查</h1>
+          <p class="subtitle">
+            面向 CS2 训练地图、机器人控制、投掷物轨迹显示等场景，集中管理常用指令。
+          </p>
+        </div>
+
+      </header>
+
+      <section class="controls">
+        <label class="control">
+          <span>搜索</span>
+          <input id="searchInput" type="text" placeholder="关键词 / 指令 / 标签" />
+        </label>
+        <label class="control">
+          <span>标签</span>
+          <select id="tagSelect"></select>
+        </label>
+        <label class="control">
+          <span>收藏</span>
+          <select id="favoriteSelect">
+            <option value="all">全部</option>
+            <option value="favorites">仅收藏</option>
+          </select>
+        </label>
+        <button class="btn ghost" id="resetBtn">重置筛选</button>
+      </section>
+
+      <section class="summary">
+        <div>
+          <strong id="countLabel">0</strong> 条指令
+        </div>
+        <div class="tips">
+          <span>提示：不少指令需要 <code>sv_cheats 1</code> 才能使用。</span>
+        </div>
+      </section>
+
+      <section class="selection">
+        <div class="selection-info">
+          已选择 <strong id="selectedCount">0</strong> 条
+        </div>
+        <div class="selection-actions">
+          <div class="selection-row">
+            <button class="btn" id="shareCodeBtn">复制/分享指令</button>
+            <div class="share-input">
+              <input id="shareCodeInput" type="text" placeholder="粘贴分享指令（支持多条指令）" />
+              <button class="btn ghost" id="applyShareCodeBtn">应用指令</button>
+            </div>
+          </div>
+          <div class="selection-row">
+            <button class="btn ghost" id="clearHotkeysBtn">清空快捷键绑定</button>
+            <button class="btn ghost" id="clearSelectedBtn">清空已选</button>
+          </div>
+        </div>
+      </section>
+
+      <main id="cards" class="cards"></main>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
