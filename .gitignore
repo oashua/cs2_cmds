@@ -1,0 +1,5 @@
+# Ignore local spawn reference assets
+spaws/
+map*.png
+website_log.md
+robots.txt
