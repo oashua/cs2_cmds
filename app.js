@@ -382,7 +382,13 @@ const renderCards = () => {
 
     const copyBtn = document.createElement("button");
     copyBtn.textContent = "复制";
-  copyBtn.addEventListener("click", () => copyText(buildCommandText(item)));
+  copyBtn.addEventListener("click", () => {
+    if (hotkeys[item.command]) {
+      copyText(`bind ${hotkeys[item.command]} "${buildCommandText(item)}"`);
+      return;
+    }
+    copyText(buildCommandText(item));
+  });
 
     commandBox.append(code, copyBtn);
 
@@ -458,7 +464,7 @@ const shareSelected = () => {
     return;
   }
   const selectedCommands = commands
-    .filter((item) => selected.has(item.command))
+    .filter((item) => selected.has(item.command) && !hotkeys[item.command])
     .map((item) => buildCommandText(item));
   const bindCommands = commands
     .filter((item) => hotkeys[item.command])
